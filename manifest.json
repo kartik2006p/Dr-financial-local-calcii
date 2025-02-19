@@ -1,7 +1,20 @@
 {
-  "name": "DR calciii",
-  "theme_color": "#000000",
-  "background_color": "#000000",
-  "short_name": "DR_CAL",
-  "id": "kartikone_deploy"
+  "name": "Financial Calculator",
+  "short_name": "FinCalc",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6200ea",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
 }
