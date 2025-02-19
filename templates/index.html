@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Calculator by dr_carry</title>
+    <link rel="icon" type="image/png" href="/static/calculator.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+    <link id="theme" rel="stylesheet" href="{{ url_for('static', filename='theme1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/financial.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="dr_carry">dr. carry</h1>
+        <h2>Calculator</h2>
+        <div class="calculator">
+            <input type="text" id="display" readonly>
+            <div class="buttons">
+                <button class="calc-btn" onclick="clearDisplay()">AC</button>
+                <button class="calc-btn" onclick="deleteChar()">&larr;</button>
+                <button class="calc-btn" onclick="appendChar('%')">%</button>
+                <button class="calc-btn" onclick="appendChar('/')">/</button>
+            
+                <button class="calc-btn" onclick="appendChar('7')">7</button>
+                <button class="calc-btn" onclick="appendChar('8')">8</button>
+                <button class="calc-btn" onclick="appendChar('9')">9</button>
+                <button class="calc-btn" onclick="appendChar('*')">*</button>
+            
+                <button class="calc-btn" onclick="appendChar('4')">4</button>
+                <button class="calc-btn" onclick="appendChar('5')">5</button>
+                <button class="calc-btn" onclick="appendChar('6')">6</button>
+                <button class="calc-btn" onclick="appendChar('-')">-</button>
+            
+                <button class="calc-btn" onclick="appendChar('1')">1</button>
+                <button class="calc-btn" onclick="appendChar('2')">2</button>
+                <button class="calc-btn" onclick="appendChar('3')">3</button>
+                <button class="calc-btn" onclick="appendChar('+')">+</button>
+            
+                <button class="calc-btn" onclick="appendChar('0')">0</button>
+                <button class="calc-btn" onclick="appendChar('.')">.</button>
+                <button class="calc-btn equal" onclick="calculate()">=</button>
+            </div>
+            <button class="toggle" onclick="toggleTheme()">Switch Style</button>
+        </div>
+    </div>
+
+    <!-- Toggle Button for Financial Calculator -->
+    <div class="financial-btn-container">
+        <button id="openCalculator" class="financial-btn">Financial Calculator</button>
+    </div>
+
+    <div id="financialPopup" class="popup">
+        <div class="popup-content">
+            <button id="closePopup" class="close-btn">✖</button>
+            <h2>Financial Calculator</h2>
+            
+            <label class="popup-label">Type:</label>
+            <select id="calcType" class="popup-select">
+                <option value="si">Simple Interest</option>
+                <option value="ci">Compound Interest</option>
+            </select>
+
+            <label class="popup-label">Principal:</label>
+            <input type="number" id="principal" class="popup-input" placeholder="Enter principal amount">
+
+            <label class="popup-label">Time (months):</label>
+            <input type="number" id="time" class="popup-input" placeholder="Enter time in months">
+
+            <label class="popup-label">Rate of Interest:</label>
+            <input type="number" id="rate" class="popup-input" placeholder="Enter rate of interest">
+
+            <button id="calculate" class="popup-btn">Calculate</button>
+
+            <div id="result" class="popup-result"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/financial.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("/service-worker.js").then(() => {
+            console.log("Service Worker Registered");
+          });
+        }
+      </script>
+      
+</body>
+</html>

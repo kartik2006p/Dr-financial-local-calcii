@@ -1,0 +1,154 @@
+/* Financial Calculator Container */
+.financial-calculator {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 350px;  /* Adjusted width */
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(120%);
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Show calculator */
+.financial-calculator.active {
+    transform: translateX(0);
+}
+
+/* Close button */
+.financial-calculator .close-btn {
+    background: #fff;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+/* Calculator Title */
+.financial-calculator h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Label styles */
+.financial-calculator label {
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+    color: #444;
+}
+
+/* Input Fields */
+.financial-calculator input {
+    width: 80%;  /* Adjust width */
+    max-width: 250px;
+    padding: 6px;
+    margin-bottom: 8px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border 0.3s ease-in-out;
+}
+
+.financial-calculator input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Toggle Switch */
+.switch-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.switch-container label {
+    font-size: 14px;
+}
+
+.switch {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.switch::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease;
+}
+
+.switch.active {
+    background: #007bff;
+}
+
+.switch.active::before {
+    left: 22px;
+}
+
+/* Calculate Button */
+.financial-calculator button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.financial-calculator button:hover {
+    background: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .financial-calculator {
+        width: 90%;
+        right: 5%;
+    }
+}
+
+
+.financial-calculator {
+    position: fixed;
+    right: -400px; /* Start hidden */
+    top: 50px;
+    width: 350px;
+    background: white;
+    padding: 20px;
+    box-shadow: -2px 0px 10px rgba(0,0,0,0.2);
+    transition: right 0.3s ease-in-out; /* Smooth animation */
+}
+
+.financial-calculator.active {
+    right: 0; /* Slide in */
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
