@@ -18,7 +18,7 @@ body {
 }
 
 .equal{
-    width: 210%;
+    width: 215%;
 }
 
 .container {
@@ -74,3 +74,47 @@ button {
     font-weight: 900;
     /* font-stretch: extra-expanded; */
 }
+
+
+/* 🔹 Mobile Optimization (Max width: 480px) */
+@media (max-width: 480px) {
+    body {
+        height: auto; /* Allow scrolling */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        width: 90%; /* Reduce width */
+        max-width: 250px;
+    }
+
+    .calculator {
+        height: auto;
+    }
+
+    #display {
+        height: 70px;
+        font-size: 20px;
+    }
+
+    .buttons {
+        gap: 5px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .equal {
+        width: 160%; /* Adjust equal button */
+    }
+
+    .toggle {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
+

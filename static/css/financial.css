@@ -16,9 +16,13 @@
 
 /* 🔹 Financial Button Container */
 .financial-btn-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+    /* position: absolute;
+    bottom: 50px; /* Moves below the calculator */
+    /*left: 51.25%;
+    transform: translateX(-50%); */
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 /* 🔹 Popup Modal */
@@ -165,7 +169,37 @@
     align-items: center;
 }   
 
-/* place button of opening down to calc*/
-/* place button of opening down to calc*/
-/*do this before*/
+/* 🔹 Mobile Optimization (Max width: 480px) */
+@media (max-width: 480px) {
+    .popup {
+        width: 90%;
+        max-width: 280px;
+        max-height: 70vh; /* Adjust height */
+        padding: 8px;
+    }
+
+    .popup-label, .popup-input, .popup-select {
+        font-size: 0.9rem;
+    }
+
+    .popup-input, .popup-select {
+        height: 28px;
+        padding: 4px;
+    }
+
+    .popup-btn {
+        padding: 6px;
+        font-size: 0.9rem;
+    }
+
+    .financial-btn-container {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .financial-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
 
